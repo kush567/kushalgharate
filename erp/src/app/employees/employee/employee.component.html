@@ -1,0 +1,88 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+  <label for="FullName">Full Name</label>
+  <input id="fullname" formControlName="fullname" type="text" class="form-control" >
+  <!-- <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">this field is required</div> -->
+</div>
+
+<div class="form-group">
+  <label for="Position">Position</label>
+  <input id="position" formControlName="position"  type="text" class="form-control">
+</div>
+
+<div class="form-row">
+
+  <div class="form-group col-md-6">
+  <label for="EMPCode">EMP CODE</label>
+  <input  id="empcode" formControlName="empcode" type="text" class="form-control">
+</div>
+<div class="form-group col-md-6">
+  <label for="Mobile">MOBILE</label>
+  <input  id="mobile" formControlName="mobile" type="text" class="form-control">
+</div>
+</div>
+<div class="form-group">
+  <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+</div>
+</form>
+
+
+
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)" autocomplete="off">
+
+  <div class="form-group">
+  <label for="FullName">Full Name</label>
+  <input name="FullName" #FullName="ngModel"  [(ngModel)]="service.formData.FullName"  type="text" class="form-control" required>
+  <div class="validation-error" *ngIf="FullName.invalid && FullName.touched">this field is required</div>
+</div>
+
+<div class="form-group">
+  <label for="Position">Position</label>
+  <input name="Position" #Position="ngModel"  [(ngModel)]="service.formData.Position" type="text" class="form-control">
+</div>
+
+<div class="form-row">
+
+  <div class="form-group col-md-6">
+  <label for="EMPCode">EMP CODE</label>
+  <input name="EMPCode" #EMPCode="ngModel"  [(ngModel)]="service.formData.EMPCode" type="text" class="form-control">
+</div>
+<div class="form-group col-md-6">
+  <label for="Mobile">MOBILE</label>
+  <input name="Mobile" #Mobile="ngModel"  [(ngModel)]="service.formData.Mobile" type="text" class="form-control">
+</div>
+</div>
+<div class="form-group">
+  <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+</div>
+</form> -->
+
+<!-- <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+
+  <div class="form-group">
+  <label for="">Full Name</label>
+  <input name="FullName" #FullName="ngModel"  [(ngModel)]="service.formData.FullName" type="text" class="form-control" required>
+  <div class="div validation-error" *ngIf="FullName.invalid && FullName.touched">this field is required</div>
+</div>
+
+<div class="form-group">
+  <label for="">POSITION</label>
+  <input name="Position" #Position="ngModel"  [(ngModel)]="service.formData.Position" type="text" class="form-control">
+</div>
+
+<div class="form-row">
+
+  <div class="form-group col-md-6">
+  <label for="">EMP CODE</label>
+  <input name="EMPCode" #EMPCode="ngModel"  [(ngModel)]="service.formData.EMPCode" type="text" class="form-control">
+</div>
+<div class="form-group col-md-6">
+  <label for="">MOBILE</label>
+  <input name="Mobile" #Mobile="ngModel"  [(ngModel)]="service.formData.Mobile" type="text" class="form-control">
+</div>
+</div>
+<div class="form-group">
+  <button type="submit" [disabled]="form.invalid" class="btn btn-lg btn-block">SUBMIT</button>
+</div>
+</form> -->

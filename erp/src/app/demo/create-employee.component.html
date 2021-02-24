@@ -1,0 +1,43 @@
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()" class="form-horizontal col-sm-6" >
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3>Create Employee</h3>
+    </div>
+
+    <div class="panel-body">
+      
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label" for="fullname">full name</label>
+        <div class="col-sm-8">
+          <input id="fullname" formControlName="fullname" type="text" class="text-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label" for="position">Position</label>
+        <div class="col-sm-8">
+          <input id="position"  formControlName="position" type="text" class="text-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label" for="empcode">empcode</label>
+        <div class="col-sm-8">
+          <input id="empcode"  formControlName="empcode" type="text" class="text-control">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label" for="mobile">mobile</label>
+        <div class="col-sm-8">
+          <input id="mobile"  formControlName="mobile" type="text" class="text-control">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn btn-primary"  type="submit">Save</button>
+    </div>
+  </div>
+</form>
