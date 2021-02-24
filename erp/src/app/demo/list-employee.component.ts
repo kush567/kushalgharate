@@ -9,10 +9,9 @@ import { Employee } from '../shared/employee.model';
 })
 export class ListEmployeeComponent implements OnInit {
 
-  constructor(private service : EmployeeService) { }
+  constructor(public service: EmployeeService) { }
 
   ngOnInit() {
-    debugger
     this.service.refreshList();
   }
   populateForm(emp : Employee){

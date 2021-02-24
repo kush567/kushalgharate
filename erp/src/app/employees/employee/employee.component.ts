@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { FormGroup, FormControl  } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { EmployeeService } from 'src/app/shared/employee.service';
 
 
@@ -10,13 +10,13 @@ import { EmployeeService } from 'src/app/shared/employee.service';
   styleUrls: ['./employee.component.css']
 })
 export class EmployeeComponent implements OnInit {
-employeeForm : FormGroup; //this taken for formgroup
+  employeeForm: FormGroup; // this taken for formgroup
 
 
-  constructor(private service : EmployeeService){ }
+  constructor(private service: EmployeeService) { }
 
-  ngOnInit() {
-    //this.resetForm();
+  ngOnInit(): void {
+    // this.resetForm();
     this.employeeForm = new FormGroup({
       fullname: new FormControl(),
       position: new FormControl(),
@@ -26,34 +26,33 @@ employeeForm : FormGroup; //this taken for formgroup
   }
 
 
-  resetForm(form: NgForm){
-    if(form != null)
-    form.resetForm();
+  resetForm(form: NgForm): void {
+    if (form != null) {
+      form.resetForm();
+    }
     this.service.formData = {
-      EmployeeID : null,
-      FullName : '',
-      Position : '',
-      EMPCode : '',
-      Mobile : ''
-  }
+      EmployeeID: null,
+      FullName: '',
+      Position: '',
+      EMPCode: '',
+      Mobile: ''
+    }
   }
 
-  onSubmit(form: NgForm){
+  onSubmit(): void {
+    // console.log(form);
+    console.log(this.employeeForm.value);
+    // this.insertRecord(form);
+  }
+
+  insertRecord(form: NgForm): void {
     debugger
     console.log(form);
     console.log(this.employeeForm.value);
-  this.insertRecord(form);
-  }
-
-  insertRecord(form: NgForm)
-  {
-    debugger
-    console.log(form);
-    console.log(this.employeeForm.value);
-    this.service.postEmployee(form.value).subscribe(res => {      
+    this.service.postEmployee(form.value).subscribe(res => {
       //this.toastr.success('Inserted Successfully','EMP. Register');
-      this.resetForm(form)
-    })
+      this.resetForm(form);
+    });
   }
 
 }

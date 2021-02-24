@@ -8,7 +8,7 @@ import { EmployeeService } from 'src/app/shared/employee.service';
   styleUrls: ['./create-employee.component.css']
 })
 export class CreateEmployeeComponent implements OnInit {
-employeeForm : FormGroup;
+  employeeForm :FormGroup;
   constructor(private service : EmployeeService) { }
 
   ngOnInit() {
